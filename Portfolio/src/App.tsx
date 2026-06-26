@@ -1,5 +1,7 @@
 import Header from "./components/Header";
 import Grid from "./components/Grid";
+import Contact from "./components/Contact"
+
 import "./App.css";
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
     <>
       <Header />
       <Grid />
+      <Contact />
     </>
   );
 }
