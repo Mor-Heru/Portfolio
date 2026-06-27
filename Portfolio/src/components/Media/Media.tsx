@@ -9,7 +9,7 @@ const Media = () => {
 
 
     return (
-        <section id="contact" className="flex px-10">
+        <section id="media" className="flex px-10">
             {medias.map((mediaElem, index) => (
                 <MediaElement key={index} {...mediaElem}/>
             ))}
