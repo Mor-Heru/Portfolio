@@ -8,7 +8,7 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="flex gap-4 p-10">
+        <section id="about" className="flex flex-col md:flex-row gap-4 p-10">
             {informations.map((infoElem, index) => (
                 <AboutCard key = {index} {...infoElem} />
             ))}
