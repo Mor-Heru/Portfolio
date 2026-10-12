@@ -1,11 +1,10 @@
 interface Props {
     name: string;
-    date: string;
     img: string;
     url: string;
 }
 
-const GridElement = ({ name, date, img, url }: Props) => {
+const GridElement = ({ name, img, url }: Props) => {
     return (
         <a
             href={url}
@@ -20,14 +19,10 @@ const GridElement = ({ name, date, img, url }: Props) => {
             </div>
 
             <img
-                className="w-full h-[174px] object-cover"
+                className="w-full h-[220px] object-cover"
                 src={img}
                 alt={name}
             />
-
-            <p className="bg-purple-600 px-4 py-2">
-                {date}
-            </p>
         </a>
     );
 };
