@@ -7,7 +7,7 @@ interface Props {
   role: string;
   description: string;
   technologies: string[];
-  skillGroups?: string[];
+  skillGroups?: string[][];
 }
 
 const cardVariants: Variants = {
@@ -48,6 +48,8 @@ const AboutCard = ({
   technologies,
   skillGroups = [],
 }: Props) => {
+  const allTechnologies = [...new Set([...technologies, ...skillGroups.flat()])];
+
   const handleOpenProfile = () => {
     window.open(githubUrl, "_blank", "noopener,noreferrer");
   };
@@ -184,8 +186,8 @@ const AboutCard = ({
             </h3>
 
             <div className="flex flex-wrap gap-2">
-              {technologies.map((technology) => {
-                const Icon = technologyIcons[technology];
+              {allTechnologies.map((technology) => {
+                const Icon = technologyIcons[technology] ?? technologyIcons.Default;
 
                 return (
                   <span
@@ -208,29 +210,13 @@ const AboutCard = ({
                       group-hover:bg-purple-500/20
                     "
                   >
-                    {Icon && <Icon className="text-base" />}
+                    <Icon className="text-base" />
                     {technology}
                   </span>
                 );
               })}
             </div>
 
-            {skillGroups.length > 0 && (
-              <div className="mt-6">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">
-                  Technical skills
-                </h3>
-
-                <ul className="space-y-2 text-sm leading-6 text-slate-300">
-                  {skillGroups.map((skill) => (
-                    <li key={skill} className="flex gap-2">
-                      <span className="mt-[0.45rem] h-1.5 w-1.5 rounded-full bg-purple-400" />
-                      <span>{skill}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       </motion.div>

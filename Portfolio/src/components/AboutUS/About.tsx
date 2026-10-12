@@ -33,7 +33,7 @@ const About = () => {
       githubUrl: "https://github.com/mor-heru",
       role: "Junior IT Specialist • Web Developer • System & Network Administration",
       description:
-        "", // Napisz tu coś o sobie
+        "I'm passionate about web development, programming and IT infrastructure. I enjoy creating websites, exploring new technologies, configuring systems and networks, and solving technical problems. I'm continuously improving my skills in software development, system administration and modern web technologies.",
       technologies: [
         "Python",
         "React",
@@ -43,11 +43,11 @@ const About = () => {
         "Tailwind",
       ],
       skillGroups: [
-        "C++, C#, Python, JavaScript, PHP, Java",
-        "HTML, CSS, React, WordPress, Apache, IIS",
-        "SQL, MySQL, PostgreSQL",
-        "Windows, Linux, DNS, DHCP, FTP, SSH, Samba",
-        "Git, VS Code, Docker, Hyper-V, VirtualBox",
+        ["C++", "C#", "Python", "JavaScript", "PHP", "Java"],
+        ["HTML", "CSS", "React", "WordPress", "Apache", "IIS"],
+        ["SQL", "MySQL", "PostgreSQL"],
+        ["Windows", "Linux", "DNS", "DHCP", "FTP", "SSH", "Samba"],
+        ["Git", "VS Code", "Docker", "Hyper-V", "VirtualBox"],
       ],
     },
   ];
