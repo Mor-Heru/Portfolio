@@ -25,11 +25,24 @@ const Grid = () => {
                 const data: GitHubRepo[] = await response.json();
 
                 const filteredProjects = data
-                    .filter((repo) => !repo.name.startsWith(".") && repo.name !== "mor-heru")
-                    .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
-                    .slice(0, 8);
+                    .filter((repo) => !repo.name.startsWith(".") && repo.name !== "Portfolio")
+                    .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
 
-                setProjects(filteredProjects);
+                const profileCard: GitHubRepo = {
+                    name: "GitHub Profile",
+                    html_url: "https://github.com/mor-heru",
+                    updated_at: new Date().toISOString(),
+                    description: null,
+                };
+
+                const portfolioCard: GitHubRepo = {
+                    name: "Portfolio",
+                    html_url: "https://github.com/mor-heru/Portfolio",
+                    updated_at: new Date().toISOString(),
+                    description: null,
+                };
+
+                setProjects([profileCard, portfolioCard, ...filteredProjects]);
             } catch (error) {
                 console.error("Unable to load GitHub repos:", error);
                 setProjects([]);
