@@ -15,6 +15,7 @@ const About = () => {
   const informations = [
     {
       name: "Alan",
+      githubUrl: "https://github.com/Nexiuuu",
       role: "Front-end Developer • Game Developer",
       description:
         "I'm passionate about creating modern web applications and games. I enjoy building responsive interfaces, solving complex problems and continuously improving my skills.",
@@ -29,7 +30,8 @@ const About = () => {
     },
     {
       name: "Radosław",
-      role: "AI/ML Developer • Front-end Developer",
+      githubUrl: "https://github.com/mor-heru",
+      role: "Junior IT Specialist • Web Developer • System & Network Administration",
       description:
         "", // Napisz tu coś o sobie
       technologies: [
@@ -39,6 +41,13 @@ const About = () => {
         "JavaScript",
         "Docker",
         "Tailwind",
+      ],
+      skillGroups: [
+        "C++, C#, Python, JavaScript, PHP, Java",
+        "HTML, CSS, React, WordPress, Apache, IIS",
+        "SQL, MySQL, PostgreSQL",
+        "Windows, Linux, DNS, DHCP, FTP, SSH, Samba",
+        "Git, VS Code, Docker, Hyper-V, VirtualBox",
       ],
     },
   ];

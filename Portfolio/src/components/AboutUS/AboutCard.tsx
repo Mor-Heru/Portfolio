@@ -3,9 +3,11 @@ import { motion, easeOut, type Variants } from "framer-motion";
 
 interface Props {
   name: string;
+  githubUrl: string;
   role: string;
   description: string;
   technologies: string[];
+  skillGroups?: string[];
 }
 
 const cardVariants: Variants = {
@@ -40,10 +42,16 @@ const glowVariants: Variants = {
 
 const AboutCard = ({
   name,
+  githubUrl,
   role,
   description,
   technologies,
+  skillGroups = [],
 }: Props) => {
+  const handleOpenProfile = () => {
+    window.open(githubUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <motion.article
     variants={cardVariants}
@@ -66,7 +74,17 @@ const AboutCard = ({
         stiffness: 260,
         damping: 20,
     }}
-      className="group relative flex-1"
+      className="group relative flex-1 cursor-pointer"
+      onClick={handleOpenProfile}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          handleOpenProfile();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open ${name} GitHub profile`}
     >
       {/* Glow */}
       <motion.div
@@ -196,6 +214,23 @@ const AboutCard = ({
                 );
               })}
             </div>
+
+            {skillGroups.length > 0 && (
+              <div className="mt-6">
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">
+                  Technical skills
+                </h3>
+
+                <ul className="space-y-2 text-sm leading-6 text-slate-300">
+                  {skillGroups.map((skill) => (
+                    <li key={skill} className="flex gap-2">
+                      <span className="mt-[0.45rem] h-1.5 w-1.5 rounded-full bg-purple-400" />
+                      <span>{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
