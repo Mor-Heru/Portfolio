@@ -14,21 +14,6 @@ const containerVariants = {
 const About = () => {
   const informations = [
     {
-      name: "Alan",
-      githubUrl: "https://github.com/Nexiuuu",
-      role: "Front-end Developer • Game Developer",
-      description:
-        "I'm passionate about creating modern web applications and games. I enjoy building responsive interfaces, solving complex problems and continuously improving my skills.",
-      technologies: [
-        "React",
-        "TypeScript",
-        "JavaScript",
-        "Tailwind",
-        "Docker",
-        "C++",
-      ],
-    },
-    {
       name: "Radosław",
       githubUrl: "https://github.com/mor-heru",
       role: "Junior IT Specialist • Web Developer • System & Network Administration",
